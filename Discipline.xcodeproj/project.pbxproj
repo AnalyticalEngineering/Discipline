@@ -14,6 +14,12 @@
 		128C5B562AF018FE0092DC7C /* DisciplineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B552AF018FE0092DC7C /* DisciplineTests.swift */; };
 		128C5B602AF018FE0092DC7C /* DisciplineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B5F2AF018FE0092DC7C /* DisciplineUITests.swift */; };
 		128C5B622AF018FE0092DC7C /* DisciplineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B612AF018FE0092DC7C /* DisciplineUITestsLaunchTests.swift */; };
+		128C5B712AF01AFF0092DC7C /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B702AF01AFF0092DC7C /* TabModel.swift */; };
+		128C5B742AF01DA40092DC7C /* TabBarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B732AF01DA40092DC7C /* TabBarHome.swift */; };
+		128C5B762AF01E7C0092DC7C /* TabPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B752AF01E7C0092DC7C /* TabPosition.swift */; };
+		128C5B782AF01EA50092DC7C /* TabShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B772AF01EA50092DC7C /* TabShape.swift */; };
+		128C5B7B2AF01F760092DC7C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B7A2AF01F760092DC7C /* Color.swift */; };
+		128C5B7D2AF01FB70092DC7C /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B7C2AF01FB70092DC7C /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		128C5B5B2AF018FE0092DC7C /* DisciplineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisciplineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		128C5B5F2AF018FE0092DC7C /* DisciplineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplineUITests.swift; sourceTree = "<group>"; };
 		128C5B612AF018FE0092DC7C /* DisciplineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		128C5B702AF01AFF0092DC7C /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		128C5B732AF01DA40092DC7C /* TabBarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHome.swift; sourceTree = "<group>"; };
+		128C5B752AF01E7C0092DC7C /* TabPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPosition.swift; sourceTree = "<group>"; };
+		128C5B772AF01EA50092DC7C /* TabShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabShape.swift; sourceTree = "<group>"; };
+		128C5B7A2AF01F760092DC7C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		128C5B7C2AF01FB70092DC7C /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +107,10 @@
 		128C5B422AF018FD0092DC7C /* Discipline */ = {
 			isa = PBXGroup;
 			children = (
-				128C5B432AF018FD0092DC7C /* DisciplineApp.swift */,
+				128C5B792AF01F640092DC7C /* SupportFiles */,
+				128C5B722AF01D7D0092DC7C /* TabBarPackage */,
 				128C5B452AF018FD0092DC7C /* ContentView.swift */,
+				128C5B432AF018FD0092DC7C /* DisciplineApp.swift */,
 				128C5B472AF018FE0092DC7C /* Assets.xcassets */,
 				128C5B492AF018FE0092DC7C /* Discipline.entitlements */,
 				128C5B4A2AF018FE0092DC7C /* Preview Content */,
@@ -127,6 +141,42 @@
 				128C5B612AF018FE0092DC7C /* DisciplineUITestsLaunchTests.swift */,
 			);
 			path = DisciplineUITests;
+			sourceTree = "<group>";
+		};
+		128C5B6E2AF01ABE0092DC7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B732AF01DA40092DC7C /* TabBarHome.swift */,
+				128C5B752AF01E7C0092DC7C /* TabPosition.swift */,
+				128C5B772AF01EA50092DC7C /* TabShape.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		128C5B6F2AF01AC60092DC7C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B702AF01AFF0092DC7C /* TabModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		128C5B722AF01D7D0092DC7C /* TabBarPackage */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B6E2AF01ABE0092DC7C /* Views */,
+				128C5B6F2AF01AC60092DC7C /* Models */,
+			);
+			path = TabBarPackage;
+			sourceTree = "<group>";
+		};
+		128C5B792AF01F640092DC7C /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B7A2AF01F760092DC7C /* Color.swift */,
+				128C5B7C2AF01FB70092DC7C /* HapticManager.swift */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128C5B742AF01DA40092DC7C /* TabBarHome.swift in Sources */,
+				128C5B712AF01AFF0092DC7C /* TabModel.swift in Sources */,
+				128C5B7D2AF01FB70092DC7C /* HapticManager.swift in Sources */,
+				128C5B7B2AF01F760092DC7C /* Color.swift in Sources */,
 				128C5B462AF018FD0092DC7C /* ContentView.swift in Sources */,
+				128C5B782AF01EA50092DC7C /* TabShape.swift in Sources */,
 				128C5B442AF018FD0092DC7C /* DisciplineApp.swift in Sources */,
+				128C5B762AF01E7C0092DC7C /* TabPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

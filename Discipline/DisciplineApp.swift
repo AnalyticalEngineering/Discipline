@@ -11,7 +11,7 @@ import SwiftUI
 struct DisciplineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarHome()
         }
     }
 }
