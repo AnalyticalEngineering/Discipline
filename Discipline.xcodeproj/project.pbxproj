@@ -20,6 +20,14 @@
 		128C5B782AF01EA50092DC7C /* TabShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B772AF01EA50092DC7C /* TabShape.swift */; };
 		128C5B7B2AF01F760092DC7C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B7A2AF01F760092DC7C /* Color.swift */; };
 		128C5B7D2AF01FB70092DC7C /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B7C2AF01FB70092DC7C /* HapticManager.swift */; };
+		128C5B822AF029830092DC7C /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B812AF029830092DC7C /* Expense.swift */; };
+		128C5B842AF02B3C0092DC7C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B832AF02B3C0092DC7C /* Category.swift */; };
+		128C5B862AF065890092DC7C /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B852AF065890092DC7C /* ExpenseView.swift */; };
+		128C5B892AF067A10092DC7C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B882AF067A10092DC7C /* SideMenu.swift */; };
+		128C5B8B2AF0735D0092DC7C /* ExpenseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B8A2AF0735D0092DC7C /* ExpenseCardView.swift */; };
+		128C5B8D2AF073760092DC7C /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B8C2AF073760092DC7C /* AddExpenseView.swift */; };
+		128C5B8F2AF074A60092DC7C /* GroupedExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C5B8E2AF074A60092DC7C /* GroupedExpenses.swift */; };
+		129495AC2AF31E7E00C17D5E /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129495AB2AF31E7E00C17D5E /* CategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,14 @@
 		128C5B772AF01EA50092DC7C /* TabShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabShape.swift; sourceTree = "<group>"; };
 		128C5B7A2AF01F760092DC7C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		128C5B7C2AF01FB70092DC7C /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		128C5B812AF029830092DC7C /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		128C5B832AF02B3C0092DC7C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		128C5B852AF065890092DC7C /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
+		128C5B882AF067A10092DC7C /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		128C5B8A2AF0735D0092DC7C /* ExpenseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCardView.swift; sourceTree = "<group>"; };
+		128C5B8C2AF073760092DC7C /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		128C5B8E2AF074A60092DC7C /* GroupedExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedExpenses.swift; sourceTree = "<group>"; };
+		129495AB2AF31E7E00C17D5E /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +103,8 @@
 		128C5B372AF018FD0092DC7C = {
 			isa = PBXGroup;
 			children = (
+				128C5B872AF0678A0092DC7C /* SideMenu */,
+				128C5B7E2AF0292F0092DC7C /* MoneyPackage */,
 				128C5B422AF018FD0092DC7C /* Discipline */,
 				128C5B542AF018FE0092DC7C /* DisciplineTests */,
 				128C5B5E2AF018FE0092DC7C /* DisciplineUITests */,
@@ -110,7 +128,6 @@
 				128C5B792AF01F640092DC7C /* SupportFiles */,
 				128C5B722AF01D7D0092DC7C /* TabBarPackage */,
 				128C5B452AF018FD0092DC7C /* ContentView.swift */,
-				128C5B432AF018FD0092DC7C /* DisciplineApp.swift */,
 				128C5B472AF018FE0092DC7C /* Assets.xcassets */,
 				128C5B492AF018FE0092DC7C /* Discipline.entitlements */,
 				128C5B4A2AF018FE0092DC7C /* Preview Content */,
@@ -173,10 +190,49 @@
 		128C5B792AF01F640092DC7C /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				128C5B432AF018FD0092DC7C /* DisciplineApp.swift */,
 				128C5B7A2AF01F760092DC7C /* Color.swift */,
 				128C5B7C2AF01FB70092DC7C /* HapticManager.swift */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		128C5B7E2AF0292F0092DC7C /* MoneyPackage */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B802AF029500092DC7C /* Views */,
+				128C5B7F2AF029490092DC7C /* Models */,
+			);
+			path = MoneyPackage;
+			sourceTree = "<group>";
+		};
+		128C5B7F2AF029490092DC7C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B812AF029830092DC7C /* Expense.swift */,
+				128C5B832AF02B3C0092DC7C /* Category.swift */,
+				128C5B8E2AF074A60092DC7C /* GroupedExpenses.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		128C5B802AF029500092DC7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B852AF065890092DC7C /* ExpenseView.swift */,
+				128C5B8A2AF0735D0092DC7C /* ExpenseCardView.swift */,
+				128C5B8C2AF073760092DC7C /* AddExpenseView.swift */,
+				129495AB2AF31E7E00C17D5E /* CategoriesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		128C5B872AF0678A0092DC7C /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				128C5B882AF067A10092DC7C /* SideMenu.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,14 +365,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129495AC2AF31E7E00C17D5E /* CategoriesView.swift in Sources */,
 				128C5B742AF01DA40092DC7C /* TabBarHome.swift in Sources */,
+				128C5B842AF02B3C0092DC7C /* Category.swift in Sources */,
 				128C5B712AF01AFF0092DC7C /* TabModel.swift in Sources */,
+				128C5B892AF067A10092DC7C /* SideMenu.swift in Sources */,
 				128C5B7D2AF01FB70092DC7C /* HapticManager.swift in Sources */,
+				128C5B862AF065890092DC7C /* ExpenseView.swift in Sources */,
 				128C5B7B2AF01F760092DC7C /* Color.swift in Sources */,
 				128C5B462AF018FD0092DC7C /* ContentView.swift in Sources */,
 				128C5B782AF01EA50092DC7C /* TabShape.swift in Sources */,
+				128C5B822AF029830092DC7C /* Expense.swift in Sources */,
 				128C5B442AF018FD0092DC7C /* DisciplineApp.swift in Sources */,
+				128C5B8F2AF074A60092DC7C /* GroupedExpenses.swift in Sources */,
+				128C5B8D2AF073760092DC7C /* AddExpenseView.swift in Sources */,
 				128C5B762AF01E7C0092DC7C /* TabPosition.swift in Sources */,
+				128C5B8B2AF0735D0092DC7C /* ExpenseCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

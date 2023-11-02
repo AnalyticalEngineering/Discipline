@@ -21,7 +21,7 @@ struct TabBarHome: View {
     var body: some View {
         VStack(spacing: 0 ) {
             TabView(selection: $activeTab) {
-                Text("Money")
+                ExpensesView()
                     .tag(Tab.money)
                     /// Hiding Native Tab Bar
                     /// Bug on iOS 16.4

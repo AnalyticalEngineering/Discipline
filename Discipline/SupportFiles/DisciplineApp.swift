@@ -11,7 +11,9 @@ import SwiftUI
 struct DisciplineApp: App {
     var body: some Scene {
         WindowGroup {
-            TabBarHome()
+            ContentView()
         }
+        ///container
+        .modelContainer(for: [Expense.self, Category.self])
     }
 }
