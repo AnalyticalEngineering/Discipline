@@ -12,6 +12,7 @@ struct CategoriesView: View {
     @Query(animation: .snappy) private var allCategories: [Category]
     @Environment(\.modelContext) private var context
     /// View Properties
+    @Environment(\.dismiss) private var dismiss
     @State private var addCategory: Bool = false
     @State private var categoryName: String = ""
     /// Category Delete Request
@@ -65,6 +66,14 @@ struct CategoriesView: View {
                             .font(.title3)
                     }
                 }
+                ///cancel dismiss
+                ToolbarItem(placement: .topBarLeading){
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                    .tint(.red)
+                }
+
             }
             .sheet(isPresented: $addCategory) {
                 categoryName = ""
@@ -104,7 +113,7 @@ struct CategoriesView: View {
                 .interactiveDismissDisabled()
             }
         }
-        .alert("If you delete a category, all the associated expenses will be deleted too.", isPresented: $deleteRequest) {
+        .alert("Deleting a category will also delete all associated data.", isPresented: $deleteRequest) {
             Button(role: .destructive) {
                 /// Deleting Category
                 if let requestedCategory {

@@ -20,6 +20,8 @@ struct ExpensesView: View {
     @State private var groupedExpenses: [GroupedExpenses] = []
     @State private var originalGroupedExpenses: [GroupedExpenses] = []
     @State private var addExpense: Bool = false
+    @State private var addCategory: Bool = false
+
     /// Search Text
     @State private var searchText: String = ""
     
@@ -30,6 +32,7 @@ struct ExpensesView: View {
                 ForEach($groupedExpenses)  { $group in
                     Section(group.groupTitle) {
                         ForEach(group.expenses) { expense in
+                            //MARK:  EXPENSE CARD VIEW
                            ExpenseCardView(expense: expense)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                     Button{
@@ -56,6 +59,9 @@ struct ExpensesView: View {
                 if allExpenses.isEmpty || groupedExpenses.isEmpty {
                     ContentUnavailableView {
                         Label("No Expenses", systemImage: "tray.fill")
+                            .font(.title2)
+                        Text("Press '+' button to add expenses.")
+                            .font(.callout)
                     }
                 }
             }
@@ -69,6 +75,7 @@ struct ExpensesView: View {
                             .font(.title3)
                     }
                 }
+               //menu
             }
         }
         .onChange(of: searchText, initial: false) { oldValue, newValue in
@@ -84,7 +91,13 @@ struct ExpensesView: View {
             }
         }
         .sheet(isPresented: $addExpense) {
+            //MARK:  ADD EXPENSE VIEW
             AddExpenseView()
+                .interactiveDismissDisabled()
+        }
+        .sheet(isPresented: $addCategory) {
+            //MARK:  ADD EXPENSE VIEW
+            CategoriesView()
                 .interactiveDismissDisabled()
         }
     }
