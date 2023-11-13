@@ -14,6 +14,6 @@ struct DisciplineApp: App {
             ContentView()
         }
         ///container
-        .modelContainer(for: [Expense.self, Category.self])
+        .modelContainer(for: [Expense.self, Budget.self])
     }
 }

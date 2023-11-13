@@ -19,8 +19,8 @@ struct ExpenseCardView: View {
                     .font(.caption)
                     .foregroundStyle(.gray)
                 
-                if let categoryName = expense.category?.categoryName, displayTag {
-                    Text(categoryName)
+                if let budgetName = expense.budget?.budgetName, displayTag {
+                    Text(budgetName)
                         .font(.caption2)
                         .foregroundStyle(.white)
                         .padding(.horizontal, 10)

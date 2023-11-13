@@ -61,5 +61,5 @@ struct SideMenu: View {
 }
 
 #Preview {
-    ExpensesView()
+    ContentView()
 }

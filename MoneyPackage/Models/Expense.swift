@@ -13,17 +13,17 @@ class Expense {
     ///Properties
     var expenseTitle: String
     var expenseSubTitle: String
-    var amount: Double
+    var expenseAmount: Double
     var date: Date
     ///expense categories
-    var category: Category?
+    var budget: Budget?
     
-    init(expenseTitle: String, expenseSubTitle: String, amount: Double, date: Date, category: Category? = nil) {
+    init(expenseTitle: String, expenseSubTitle: String, expenseAmount: Double, date: Date, budget: Budget? = nil) {
         self.expenseTitle = expenseTitle
         self.expenseSubTitle = expenseSubTitle
-        self.amount = amount
+        self.expenseAmount = expenseAmount
         self.date = date
-        self.category = category
+        self.budget = budget
     }
     /// Currency String
     @Transient
@@ -31,7 +31,7 @@ class Expense {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         
-        return formatter.string(for: amount) ?? ""
+        return formatter.string(for: expenseAmount) ?? ""
     }
 }
 

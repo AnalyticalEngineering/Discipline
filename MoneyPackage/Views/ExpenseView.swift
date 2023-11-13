@@ -12,6 +12,7 @@ import SwiftData
 
 struct ExpensesView: View {
     //MARK:  PROPERTIES
+   
     /// Grouped Expenses Properties
     @Query(sort: [SortDescriptor(\Expense.date, order: .reverse)], animation: .snappy) private var allExpenses: [Expense]
     @Environment(\.modelContext) private var context
@@ -20,7 +21,7 @@ struct ExpensesView: View {
     @State private var groupedExpenses: [GroupedExpenses] = []
     @State private var originalGroupedExpenses: [GroupedExpenses] = []
     @State private var addExpense: Bool = false
-    @State private var addCategory: Bool = false
+    @State private var addBudget: Bool = false
 
     /// Search Text
     @State private var searchText: String = ""
@@ -33,7 +34,7 @@ struct ExpensesView: View {
                     Section(group.groupTitle) {
                         ForEach(group.expenses) { expense in
                             //MARK:  EXPENSE CARD VIEW
-                           ExpenseCardView(expense: expense)
+                            ExpenseCardView(expense: expense)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                     Button{
                                         context.delete(expense)
@@ -52,13 +53,13 @@ struct ExpensesView: View {
                     }
                 }
             }
-            .navigationTitle("Expenses")
+            
             /// Search Bar
             .searchable(text: $searchText, placement: .navigationBarDrawer, prompt: Text("Search"))
             .overlay {
                 if allExpenses.isEmpty || groupedExpenses.isEmpty {
                     ContentUnavailableView {
-                        Label("No Expenses", systemImage: "tray.fill")
+                        Label("No Expenses, live a little...", systemImage: "tray.fill")
                             .font(.title2)
                         Text("Press '+' button to add expenses.")
                             .font(.callout)
@@ -67,16 +68,25 @@ struct ExpensesView: View {
             }
             /// New Expense Add Button
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        addBudget.toggle()
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                        
+                    }
+                }
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         addExpense.toggle()
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .font(.title3)
+                            .font(.title)
+                            .foregroundStyle(.colorBlue)
                     }
                 }
-               //menu
-            }
+            }.padding(.horizontal, 2)
         }
         .onChange(of: searchText, initial: false) { oldValue, newValue in
             if !newValue.isEmpty {
@@ -95,9 +105,9 @@ struct ExpensesView: View {
             AddExpenseView()
                 .interactiveDismissDisabled()
         }
-        .sheet(isPresented: $addCategory) {
+        .sheet(isPresented: $addBudget) {
             //MARK:  ADD EXPENSE VIEW
-            CategoriesView()
+            BudgetView()
                 .interactiveDismissDisabled()
         }
     }
@@ -152,5 +162,5 @@ struct ExpensesView: View {
 }
 
 #Preview {
-    ExpensesView()
+    ContentView()
 }

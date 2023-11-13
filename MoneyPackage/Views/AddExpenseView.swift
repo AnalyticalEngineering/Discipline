@@ -16,10 +16,10 @@ struct AddExpenseView: View {
     @State private var expenseTitle: String = ""
     @State private var expenseSubTitle: String = ""
     @State private var date: Date = .init()
-    @State private var amount: CGFloat = 0
-    @State private var category: Category?
+    @State private var expenseAmount: CGFloat = 0
+    @State private var budget: Budget?
     
-    @Query(animation: .snappy) private var allCategories: [Category]
+    @Query(animation: .snappy) private var allBudgets: [Budget]
 
     
     var body: some View {
@@ -29,13 +29,13 @@ struct AddExpenseView: View {
                     TextField("Magic Keyboard", text: $expenseTitle )
                 }
                 Section("Description") {
-                    TextField("M3max Macbook Pro", text: $expenseSubTitle )
+                    TextField("M3 Max Macbook Pro", text: $expenseSubTitle )
                 }
                 Section("Amount Expensed") {
                     HStack{
                         Text("$")
                             .fontWeight(.semibold)
-                        TextField("0.0", value: $amount, formatter: formatter)
+                        TextField("0.0", value: $expenseAmount, formatter: formatter)
                             .keyboardType(.numberPad)
                     }
                 }
@@ -45,24 +45,24 @@ struct AddExpenseView: View {
                         .labelsHidden()
                 }
                 ///Category Picker
-                if !allCategories.isEmpty {
+                if !allBudgets.isEmpty {
                     HStack{
-                        Text("Category")
+                        Text("Budget")
                         Spacer()
                         
                         Menu{
-                            ForEach(allCategories) {category in
-                                Button(category.categoryName) {
-                                    self.category = category
+                            ForEach(allBudgets) {budget in
+                                Button(budget.budgetName) {
+                                    self.budget = budget
                                 }
                             }
                             
                             Button("None") {
-                                category = nil
+                                budget = nil
                             }
                         }label:{
-                            if let categoryName = category?.categoryName {
-                                Text(categoryName)
+                            if let budgetName = budget?.budgetName {
+                                Text(budgetName)
                             }else{
                                 Text("None")
                             }
@@ -92,10 +92,10 @@ struct AddExpenseView: View {
         
         /// Disabling Add Button, until all data has been entered
         var isAddButtonDisabled: Bool {
-            return expenseTitle.isEmpty || expenseSubTitle.isEmpty || amount == .zero
+            return expenseTitle.isEmpty || expenseSubTitle.isEmpty || expenseAmount == .zero
         }
         func addExpense() {
-            let expense = Expense(expenseTitle: expenseTitle, expenseSubTitle: expenseSubTitle, amount: amount, date: date, category: category)
+            let expense = Expense(expenseTitle: expenseTitle, expenseSubTitle: expenseSubTitle, expenseAmount: expenseAmount, date: date, budget: budget)
             context.insert(expense)
             /// Closing View, Once the Data has been Added Successfully!
             dismiss()
